@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<queries>
+		<query>
+			<name></name>
+			<query></query>
+		</query>
+		<query>
+			<name></name>
+			<query></query>
+		</query>		
+	</queries>
+	
+	<configs>
+		<DB>
+			<url></url>
+			<user></user>
+			<password></password>
+		</DB>
+	</configs>
+</config>
