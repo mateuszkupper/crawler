@@ -2,20 +2,41 @@
 <config>
 	<queries>
 		<query>
-			<name></name>
-			<query></query>
+			<name>QueryToRetrieveRandomUnvisitedPage</name>
+			<stmt>
+					SELECT * FROM unvisited.unvisited
+					ORDER BY RAND()
+					LIMIT 1
+			</stmt>
 		</query>
 		<query>
-			<name></name>
-			<query></query>
+			<name>QueryToAddVisitedPage</name>
+			<stmt>
+					INSERT INTO visited.visited (url, contents)
+					VALUES (?, ?)
+			</stmt>
+		</query>
+		<query>
+			<name>QueryToDeleteUnvisitedPage</name>
+			<stmt>
+					DELETE FROM unvisited.unvisited
+					WHERE id=?
+			</stmt>
+		</query>
+		<query>
+			<name>QueryToAddUnvisitedPages</name>
+			<stmt>
+					INSERT INTO unvisited.unvisited (url)
+					VALUES (?)			
+			</stmt>
 		</query>		
 	</queries>
 	
 	<configs>
 		<DB>
-			<url></url>
-			<user></user>
-			<password></password>
+			<url>jdbc:mysql://localhost:3306</url>
+			<user>root</user>
+			<password>password</password>
 		</DB>
 	</configs>
 </config>

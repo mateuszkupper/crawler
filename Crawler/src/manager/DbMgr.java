@@ -1,4 +1,6 @@
 package manager;
+import java.util.List;
+
 import IO.*;
 import page.UnvisitedPage;
 import page.VisitedPage;
@@ -15,10 +17,10 @@ public class DbMgr {
 	}
 
 	public static void addToVisited(VisitedPage vpage) throws Exception {
-		DB.addVisited(vpage.getId());
+		DB.addVisited(vpage);
 	}
 
-	public static void addToUnvisited(String[] links) throws Exception {
+	public static void addToUnvisited(List<String> links) throws Exception {
 		DB.addUnvisited(links);
 	}
 	

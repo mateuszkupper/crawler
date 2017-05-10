@@ -4,8 +4,9 @@ public class Page {
 	private int id;
 	private String url;
 	
-	public Page(String url) {
+	public Page(String url, int id) {
 		this.setUrl(url);
+		this.setId(id);
 	}
 	
 	public Page() {}

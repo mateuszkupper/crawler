@@ -8,6 +8,7 @@ public class Run {
 			UnvisitedPage upage;
 			try {
 				upage = DbMgr.retrieveUnvisited();
+				System.out.println(upage.getUrl());
 				VisitedPage vpage = NetworkMgr.retrieveVisited(upage);
 				PageMgr.analyse(vpage);
 			} catch (Exception e) {

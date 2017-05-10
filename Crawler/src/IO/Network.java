@@ -7,23 +7,26 @@ import java.util.Scanner;
 import page.VisitedPage;
 
 public class Network {
-	public static VisitedPage retrieveVisited(String url) throws Exception {
-		VisitedPage vpage = new VisitedPage();
+	public static VisitedPage retrieveVisited(String url) throws Exception {		
 		String content = null;
 		URLConnection connection = null;
 		try {
-		  connection =  new URL(url).openConnection();
-		  Scanner scanner = new Scanner(connection.getInputStream());
-		  scanner.useDelimiter("\\Z");
-		  content = scanner.next();
-		  vpage.setUrl(url);
-		  vpage.setContents(content);
-		  scanner.close();
-		  return vpage;
+			VisitedPage vpage = new VisitedPage();
+			connection =  new URL(url).openConnection();
+			Scanner scanner = new Scanner(connection.getInputStream());
+			scanner.useDelimiter("\\Z");
+			content = scanner.next();
+			vpage.setUrl(url);
+			vpage.setContents(content);
+			scanner.close();
+			return vpage;
 		}catch ( Exception ex ) {
-		    ex.printStackTrace();
+			VisitedPage vpage = new VisitedPage();
+			vpage.setUrl(url);
+			vpage.setContents("");
+			return vpage;
 		}
-		throw new Exception("Network connection failed!");
+		//throw new Exception("Network connection failed!");
 	}
 
 }

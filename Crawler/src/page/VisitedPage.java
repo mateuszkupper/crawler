@@ -1,11 +1,12 @@
 package page;
 
+import java.util.List;
+
 public class VisitedPage extends Page {
 	private String contents;
-	private String[] links;
-	
-	public VisitedPage(String url, String contents, String[] links) {
-		super(url);
+	List<String> links;
+	public VisitedPage(String url, String contents, List<String> links, int id) {
+		super(url, id);
 		this.setContents(contents);
 		this.setLinks(links);
 	}
@@ -20,11 +21,11 @@ public class VisitedPage extends Page {
 		this.contents = contents;
 	}
 
-	public String[] getLinks() {
+	public List<String> getLinks() {
 		return links;
 	}
 
-	public void setLinks(String[] links) {
+	public void setLinks(List<String> links) {
 		this.links = links;
 	}
 }
